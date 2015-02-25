@@ -35,14 +35,14 @@ status() {
         echo -n "Checking $prog status:"
         echo
         deluged=`ps -ef |grep deluged |grep -v grep |cut -d "/" -f6`
-        delugeWeb=`ps -ef |grep deluge-web |grep -v grep |cut -d "0" -f8 |cut -d " " -f2`
+        delugeWeb=`ps -ef |grep deluge-web |grep -v grep |cut -d "-" -f2`
         if [ $deluged == "deluged" ]
         then
           echo "The deluged service is running"
         else
           echo "The deluged service is not running"
         fi
-        if [ $delugeWeb == "deluge-web" ]
+        if [ $delugeWeb == "web" ]
         then
           echo "The deluge web service is running"
         else
