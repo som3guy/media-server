@@ -13,11 +13,6 @@ RETVAL=0
 prog="deluge"
 LOCKFILE=/var/lock/subsys/$prog
 
-# Declare variables for GlassFish Server
-GLASSFISH_DIR=/var/lib/deluge
-GLASSFISH_USER=deluge
-
-
 start() {
         echo -n "Starting $prog: "
         deluged && deluge-web --fork
